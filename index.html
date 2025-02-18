@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operations</title>
+
+    <div class= container>
+    <script>
+        function getValues() {
+            const a = parseFloat(document.getElementById('aValue').value);
+            const b = parseFloat(document.getElementById('bValue').value);
+            return [a, b];
+        }
+
+        function product() {
+            const [a, b] = getValues();
+            const result = a * b;
+            alert("Product of a and b: " + result);
+        }
+
+        function power() {
+            const [a, b] = getValues();
+            const result = Math.pow(a, b);
+            alert("a raised to the power of b: " + result);
+        }
+
+        function remainder() {
+            const [a, b] = getValues();
+            const result = a % b;
+            alert("Remainder when a is divided by b: " + result);
+        }
+
+        function checkEquality() {
+            const [a, b] = getValues();
+            const result = a === b ? "a is equal to b" : "a is not equal to b";
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Enter values for a and b:</h2>
+
+    <label for="aValue">Enter a value for a:</label>
+    <input type="number" id="aValue" placeholder="Enter value for a" required><br><br>
+
+    <label for="bValue">Enter a value for b:</label>
+    <input type="number" id="bValue" placeholder="Enter value for b" required><br><br>
+
+    <button onclick="product()">Product of a and b</button>
+    <button onclick="power()">a raised to b</button>
+    <button onclick="remainder()">Remainder of a divided by b</button>
+    <button onclick="checkEquality()">Check if a is equal to b</button>
+
+</body>
+</html>
